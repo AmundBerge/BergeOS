@@ -1,0 +1,159 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../assets/backgrounds/metro_station.gif');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding: 0; 
+    margin: 0;
+}
+
+main {
+    width: 100vw; 
+    height: 97vh;
+    position: relative;
+    padding: 0; 
+    margin: 0;
+}
+
+footer {
+    height: 3vh; 
+    width: 100vw; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    font-family: 'Times New Roman', Times, serif;
+    color: white; 
+    text-shadow: 1px 1px 0px black;
+    border-top: 2px solid black;
+    background-color: grey;
+}
+
+h1 {
+    text-align: center;
+}
+
+.icon_container {
+    width: 32vw; 
+    height: 8vh;
+    display: flex;
+    justify-content: left;
+    gap: 2vh;
+    position: absolute;
+}
+
+
+.icon_button {
+    position: relative;
+    background: none;
+    border: none;
+    width: 8vh;
+    height: 8vh;
+    padding: 0; 
+    margin: 0 2vh 0 0; 
+    border: 0;
+}
+
+.icon_picture_container {
+    height: 6vh; 
+    width: 6vh;
+    position: absolute; 
+    top: 0; 
+    left: 1vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
+}
+
+.icon_text {
+    position: absolute; 
+    bottom: 0; 
+    height: 2vh; 
+    width: 8vh; 
+    align-items: center; 
+    border: 0; 
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+    color: white; 
+    text-shadow: 1px 1px 0px black;
+    font-size: 8pt;
+}
+
+#container_0 {
+    top: 10vh;
+    left: 5vw;
+}
+
+#container_1 {
+    top: 23vh;
+    left: 5vw;
+}
+
+#container_2 {
+    top: 36vh;
+    left: 5vw;
+}
+
+#container_3 {
+    top: 49vh; 
+    left: 5vw;
+}
+
+#date {
+    text-align: right;
+    padding-right: 5px;
+    font-size: 12pt;
+}
+
+#about_picture_container {
+    background-image: url('../assets/icons/about.png');
+}
+
+#music_picture_container {
+    background-image: url('../assets/icons/music.png');
+}
+
+#piano_picture_container {
+    background-image: url('../assets/icons/piano.png');
+}
+
+#resume_picture_container {
+    background-image: url('../assets/icons/resume.png');
+}
+
+#blog_picture_container {
+    background-image: url('../assets/icons/internet_explorer.png');
+}
+
+#mail_picture_container {
+    background-image: url('../assets/icons/mail.png');
+}
+
+#chess_picture_container {
+    background-image: url('../assets/icons/cube.png');
+}
+
+#video_picture_container {
+    background-image: url('../assets/icons/video.png');
+}
+
+#fonts_picture_container {
+    background-image: url('../assets/icons/fonts.png');
+}
+
+#sitemap_picture_container {
+    background-image: url('../assets/icons/sitemap.png');
+}
+
+#page_name {
+    margin-left: 5px;
+    font-size: 8pt;
+}
+
