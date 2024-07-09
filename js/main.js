@@ -8,6 +8,18 @@ const aboutContent = `
 programming, piano, sports, and chess. BergeOS is my personal website, intended both as an archive 
 of various aspects of my life, as well as displaying these to the rest of the world.</p>`
 
+const toDoContent = `
+<h1>To-Do:</h1>
+<ul>
+    <li>Style windows properly</li>
+    <li>Write and implement the content for all the icons</li>
+    <li>Create taskbar functionality</li>
+    <li>Find better icons</li>
+    <li>Implement choosing fonts and backgrounds</li>
+    <li>Create guestbook</li>
+</ul> 
+`
+
 function getCurrentDateTime(){
     return new Date().toLocaleString('de-DE');
 }
@@ -26,6 +38,11 @@ music.addEventListener('dblclick', function(){
 let about = document.querySelector('#about');
 about.addEventListener('dblclick', function(){
     createWindow(about.id, aboutContent);
+})
+
+let toDo = document.querySelector('#to-do');
+toDo.addEventListener('dblclick', function(){
+    createWindow(toDo.id, toDoContent);
 })
 
 let main = document.querySelector('#main');
@@ -60,6 +77,7 @@ function createWindow(id, content){
     divBar.style.alignItems = 'center';
     divBar.style.cursor = 'grab';
     divBar.style.borderBottom = '3px solid white';
+    divBar.style.background = 'linear-gradient(to right, #000066, #33ccff)';
 
     divContent.style.flexGrow = '1';
     divContent.style.padding = '10px';
@@ -67,6 +85,7 @@ function createWindow(id, content){
     divContent.innerHTML = content;
     divContent.style.color = 'black';
     divContent.style.fontFamily = 'Tahoma, sans-serif';
+    divContent.style.backgroundColor = '#e0e0e0';
 
 
     divBarClose = document.createElement('button');

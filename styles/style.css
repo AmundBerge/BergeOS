@@ -152,6 +152,10 @@ h1 {
     background-image: url('../assets/icons/sitemap.png');
 }
 
+#to-do_picture_container {
+    background-image: url('../assets/icons/to-do.png');
+}
+
 #page_name {
     margin-left: 5px;
     font-size: 8pt;
