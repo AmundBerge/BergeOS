@@ -2,6 +2,9 @@ let timeText = document.querySelector('#date');
 let helper = document.querySelector('#helper');
 let tester = document.querySelector('#tester');
 
+const rootURL = window.location.origin + '/BergeOS';
+console.log(rootURL);
+
 const aboutContent = `
 <h1>About</h1>
 <p>My name is Amund Dahlmo Berge, and I'm a 20-year-old Norwegian CS student. My interests include
@@ -100,7 +103,7 @@ function createWindow(id, content){
     divBarClose.style.cursor = 'pointer';
     divBarClose.style.border = '1px solid black';
     divBarClose.style.marginRight = '0.25vh';
-    divBarClose.style.backgroundImage = "url('/assets/buttons/close_button.png')";
+    divBarClose.style.backgroundImage = `url('${rootURL}/assets/buttons/close_button.png')`;
     divBarClose.style.backgroundPosition = 'center';
     divBarClose.style.backgroundSize = '80%';
     divBarClose.style.backgroundRepeat = 'no-repeat';
@@ -112,7 +115,7 @@ function createWindow(id, content){
     divBarMinimize.style.order = '2';
     divBarMinimize.style.cursor = 'pointer';
     divBarMinimize.style.border = '1px solid black';
-    divBarMinimize.style.backgroundImage = "url('/assets/buttons/minimize_button.png')";
+    divBarMinimize.style.backgroundImage = `url('${rootURL}/assets/buttons/minimize_button.png')`;
     divBarMinimize.style.backgroundPosition = 'center bottom 10%';
     divBarMinimize.style.backgroundRepeat = 'no-repeat';
     divBarMinimize.style.backgroundSize = '80%';
