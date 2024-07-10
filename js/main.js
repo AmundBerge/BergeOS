@@ -100,7 +100,7 @@ function createWindow(id, content){
     divBarClose.style.cursor = 'pointer';
     divBarClose.style.border = '1px solid black';
     divBarClose.style.marginRight = '0.25vh';
-    divBarClose.style.backgroundImage = "url('../assets/buttons/close_button.png')"
+    divBarClose.style.backgroundImage = "url('../assets/buttons/close_button.png')";
     divBarClose.style.backgroundPosition = 'center';
     divBarClose.style.backgroundSize = '80%';
     divBarClose.style.backgroundRepeat = 'no-repeat';
