@@ -100,7 +100,7 @@ function createWindow(id, content){
     divBarClose.style.cursor = 'pointer';
     divBarClose.style.border = '1px solid black';
     divBarClose.style.marginRight = '0.25vh';
-    divBarClose.style.backgroundImage = "url('../assets/buttons/close_button.png')";
+    divBarClose.style.backgroundImage = "url('/assets/buttons/close_button.png')";
     divBarClose.style.backgroundPosition = 'center';
     divBarClose.style.backgroundSize = '80%';
     divBarClose.style.backgroundRepeat = 'no-repeat';
@@ -112,7 +112,7 @@ function createWindow(id, content){
     divBarMinimize.style.order = '2';
     divBarMinimize.style.cursor = 'pointer';
     divBarMinimize.style.border = '1px solid black';
-    divBarMinimize.style.backgroundImage = "url('../assets/buttons/minimize_button.png')";
+    divBarMinimize.style.backgroundImage = "url('/assets/buttons/minimize_button.png')";
     divBarMinimize.style.backgroundPosition = 'center bottom 10%';
     divBarMinimize.style.backgroundRepeat = 'no-repeat';
     divBarMinimize.style.backgroundSize = '80%';
