@@ -11,7 +11,10 @@ const aboutContent = `
 <h1>About</h1>
 <p>My name is Amund Dahlmo Berge, and I'm a 20-year-old Norwegian CS student. My interests include
 programming, piano, sports, and chess. BergeOS is my personal website, intended both as an archive 
-of various aspects of my life, as well as displaying these to the rest of the world.</p>`
+of various aspects of my life, as well as displaying these to the rest of the world.</p>
+<p>As life goes on, I want to post monthly life updates here, review various 
+media I consume, as well as include my writings on various topics.</p>
+`
 
 const toDoContent = `
 <h1>To-Do:</h1>
@@ -23,6 +26,23 @@ const toDoContent = `
     <li>Implement choosing fonts and backgrounds</li>
     <li>Create guestbook</li>
 </ul> 
+`
+
+const projectsContent = `
+<h1>Projects</h1>
+<p>Well, I currently don't have any real projects to show for. 
+Except for this site, I suppose. Some projects I plan to do in the near future are: </p>
+<ul>
+    <li>Chess engine</li>
+    <li>HTTP messaging server</li>
+    <li>Piano cover of "Killing My Love"</li>
+</ul>
+<p>Though the list is brief for now, my planned projects are not limited to programming.
+I also want to do some lifestyle experiments, such as: </p>
+<ul>
+    <li>To go some period without listening to music</li>
+    <li>To go some period using my phone and computer only for basic communication, school, other essentials, and nothing else</li>
+</ul>
 `
 
 function getCurrentDateTime(){
@@ -37,7 +57,7 @@ setInterval(updateTime, 1000);
 
 let music = document.querySelector('#music');
 music.addEventListener('dblclick', function(){
-    window.location.href = 'https://youtu.be/-_Nu2cDYvUQ?si=5Hez3nMlwxe1D6pl';
+    window.open('https://www.youtube.com/playlist?list=PLKGBTAaGeW4hmTYiWRsSZAOuk8d4hMJvO');
 })
 
 let about = document.querySelector('#about');
@@ -53,6 +73,11 @@ toDo.addEventListener('dblclick', function(){
 let chess = document.querySelector('#chess');
 chess.addEventListener('dblclick', function(){
     main.style.backgroundColor = 'lightblue';
+})
+
+let projects = document.querySelector('#projects')
+projects.addEventListener('dblclick', function(){
+    createWindow(projects.id, projectsContent);
 })
 
 let main = document.querySelector('#main');
@@ -96,6 +121,7 @@ function createWindow(id, content){
     divContent.style.color = 'black';
     divContent.style.fontFamily = 'Tahoma, sans-serif';
     divContent.style.backgroundColor = '#e0e0e0';
+    divContent.style.overflowY = 'scroll';
 
 
     divBarClose = document.createElement('button');
