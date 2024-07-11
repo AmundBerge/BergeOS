@@ -3,8 +3,8 @@ let helper = document.querySelector('#helper');
 let tester = document.querySelector('#tester');
 
 let rootURL = window.location.origin + '/BergeOS';
-if (rootURL.includes('localhost')){
-    rootURL = '..';
+if (rootURL.includes('localhost')){    // simple fix for running the project locally
+    rootURL = '..'; 
 }
 
 const aboutContent = `
@@ -48,6 +48,11 @@ about.addEventListener('dblclick', function(){
 let toDo = document.querySelector('#to-do');
 toDo.addEventListener('dblclick', function(){
     createWindow(toDo.id, toDoContent);
+})
+
+let chess = document.querySelector('#chess');
+chess.addEventListener('dblclick', function(){
+    main.style.backgroundColor = 'lightblue';
 })
 
 let main = document.querySelector('#main');
@@ -176,7 +181,6 @@ function createWindow(id, content){
         div.style.height = '100%';
         div.style.top = '0vh';
         div.style.left = '0vw';
-        divContent.style.height = ''
     })
 
     main.appendChild(div);

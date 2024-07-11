@@ -16,6 +16,10 @@ main {
     position: relative;
     padding: 0; 
     margin: 0;
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
 }
 
 footer {
@@ -43,8 +47,9 @@ h1 {
     height: 8vh;
     display: flex;
     justify-content: left;
-    gap: 2vh;
-    position: absolute;
+    gap: 0vh;
+    margin-left: 10px;
+    margin-top: 30px;
 }
 
 
@@ -56,7 +61,6 @@ h1 {
     height: 8vh;
     padding: 0; 
     margin: 0 2vh 0 0; 
-    border: 0;
 }
 
 .icon_picture_container {
@@ -77,34 +81,44 @@ h1 {
     height: 2vh; 
     width: 8vh; 
     align-items: center; 
-    border: 0; 
+    border: none; 
     padding: 0;
     margin: 0;
-    font-family: Tahoma, sans-serif;
+    font-family: "VT323", sans-serif;
+    font-size: 14pt;
     color: white; 
     text-shadow: 1px 1px 0px black;
-    font-size: 8pt;
 }
 
-#container_0 {
-    top: 10vh;
-    left: 5vw;
+/* #container_0 {
+    top: 2vh;
+    left: 1vw;
 }
 
 #container_1 {
     top: 23vh;
-    left: 5vw;
+    left: 1vw;
 }
 
 #container_2 {
     top: 36vh;
-    left: 5vw;
+    left: 1vw;
 }
 
 #container_3 {
     top: 49vh; 
-    left: 5vw;
+    left: 1vw;
 }
+
+#container_4 {
+    top: 69vh; 
+    left: 1vw;
+}
+
+#container_5 {
+    top: 84vh; 
+    left: 1vw;
+} */
 
 #date {
     text-align: right;
@@ -153,6 +167,22 @@ h1 {
 }
 
 #to-do_picture_container {
+    background-image: url('../assets/icons/to-do.png');
+}
+
+#guestbook_picture_container {
+    background-image: url('../assets/icons/about.png');
+}
+
+#projects_picture_container {
+    background-image: url('../assets/icons/about.png');
+}
+
+#backgrounds_picture_container {
+    background-image: url('../assets/icons/internet_explorer.png');
+}
+
+#writings_picture_container {
     background-image: url('../assets/icons/to-do.png');
 }
 
