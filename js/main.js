@@ -57,6 +57,31 @@ blog.addEventListener('dblclick', function(){
     createWindow(blog.id, blogContent);
 })
 
+let piano = document.querySelector('#piano');
+piano.addEventListener('dblclick', function(){
+    createWindow(piano.id, pianoContent);
+})
+
+let sitemap = document.querySelector('#sitemap');
+sitemap.addEventListener('dblclick', function(){
+    createWindow(sitemap.id, sitemapContent);
+})
+
+let video = document.querySelector('#video');
+video.addEventListener('dblclick', function(){
+    createWindow(video.id, videoContent);
+})
+
+let backgrounds = document.querySelector('#backgrounds');
+backgrounds.addEventListener('dblclick', function(){
+    createWindow(backgrounds.id, backgroundContent);
+})
+
+let fonts = document.querySelector('#fonts');
+fonts.addEventListener('dblclick', function(){
+    createWindow(fonts.id, fontsContent);
+})
+
 let main = document.querySelector('#main');
 
 function createWindow(id, content){

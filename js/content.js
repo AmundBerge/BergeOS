@@ -64,3 +64,37 @@ const blogContent = `
 and what I learned.</p>
 <p>Coming soon!</p>
 `
+const sitemapContent = `
+<h1>Sitemap</h1>
+<p>Coming soon!</p>
+`
+
+const pianoContent = `
+<h1>Piano</h1>
+<p>Playing the piano is my primary hobby and one of my greatest passions. After having
+no proper access to a piano during my first year at university, my skills have tanked 
+a bit. This will hopefully change soon, as I will bring my electric piano to my student
+apartment. To celebrate this, I want to upload some piano videos to YouTube. It will be 
+a mix of me freshening up old pieces, playing various piano covers, as well as making my 
+own one day. For now, though, we will have to wait.</p>
+`
+const videoContent = `
+<h1>Videos</h1>
+<p>I want to make a YouTube channel where I plan to upload piano videos, funny videos to 
+troll my friends, and whatever else I deem worthy. Though I have no plans of becoming a
+youtuber, uploading some videos coincides with my goal of documenting more of my life and 
+it is going to be fun, too (hopefully).</p>
+<p>Stay tuned!</p>
+`
+
+const backgroundContent = `
+<h1>Backgrounds</h1>
+<p>Choose your background from the ones below!</p>
+<p>Coming soon!</p>
+`
+
+const fontsContent = `
+<h1>Fonts</h1>
+<p>Pick your favorite font from the ones below!</p>
+<p>Coming soon! Or, maybe never, as I will probably scrap this...</p>
+`
