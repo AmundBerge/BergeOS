@@ -90,36 +90,6 @@ h1 {
     text-shadow: 1px 1px 0px black;
 }
 
-/* #container_0 {
-    top: 2vh;
-    left: 1vw;
-}
-
-#container_1 {
-    top: 23vh;
-    left: 1vw;
-}
-
-#container_2 {
-    top: 36vh;
-    left: 1vw;
-}
-
-#container_3 {
-    top: 49vh; 
-    left: 1vw;
-}
-
-#container_4 {
-    top: 69vh; 
-    left: 1vw;
-}
-
-#container_5 {
-    top: 84vh; 
-    left: 1vw;
-} */
-
 #date {
     text-align: right;
     padding-right: 5px;
@@ -191,5 +161,16 @@ h1 {
     font-size: 8pt;
 }
 
+iframe {
+    display: block; 
+    height: 100%;
+    width: 100%;
+    margin: 0 auto; 
 
+}
 
+.iframe_container {
+    height: 315px;
+    width: 560px;
+    margin: 0 auto;
+}

@@ -19,7 +19,7 @@ setInterval(updateTime, 1000);
 
 let music = document.querySelector('#music');
 music.addEventListener('dblclick', function(){
-    window.open('https://www.youtube.com/playlist?list=PLKGBTAaGeW4hmTYiWRsSZAOuk8d4hMJvO');
+    createWindow(music.id, musicContent);
 })
 
 let about = document.querySelector('#about');
@@ -93,10 +93,10 @@ function createWindow(id, content){
     divContent.id = id + '_window' + '_content';
 
     div.style.position = 'absolute'; 
-    div.style.width = '30vw';
+    div.style.width = '50vw';
     div.style.height = '60vh';
     div.style.top = '20vh';
-    div.style.left = '35vw';
+    div.style.left = '25vw';
     div.style.backgroundColor = '#e0e0e0';
     div.style.border = '3px solid white';
     div.style.outline = '2px solid black';
@@ -123,8 +123,7 @@ function createWindow(id, content){
     divContent.style.color = 'black';
     divContent.style.fontFamily = 'Tahoma, sans-serif';
     divContent.style.backgroundColor = '#e0e0e0';
-    divContent.style.overflowY = 'scroll';
-
+    divContent.style.overflowY = 'auto';
 
     divBarClose = document.createElement('button');
     divBarMinimize = document.createElement('button');
