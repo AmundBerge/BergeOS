@@ -30,6 +30,11 @@ about.addEventListener('dblclick', function(){
 let writings = document.querySelector('#writings');
 writings.addEventListener('dblclick', function(){
     createWindow(writings.id, writingsContent);
+    let goals = document.querySelector('#goals');
+    let writingsWindow = document.querySelector('#writings_window_content');
+    goals.addEventListener('click', function(){
+        writingsWindow.innerHTML = goalsContent;
+    })
 })
 
 let toDo = document.querySelector('#to-do');
@@ -55,6 +60,11 @@ projects.addEventListener('dblclick', function(){
 let blog = document.querySelector('#blog');
 blog.addEventListener('dblclick', function(){
     createWindow(blog.id, blogContent);
+    let july2024 = document.querySelector('#july2024');
+    let blogWindow = document.querySelector('#blog_window_content');
+    july2024.addEventListener('click', function(){
+        blogWindow.innerHTML = july2024Content;
+    })
 })
 
 let piano = document.querySelector('#piano');
@@ -82,12 +92,23 @@ fonts.addEventListener('dblclick', function(){
     createWindow(fonts.id, fontsContent);
 })
 
+let mail = document.querySelector('#mail');
+mail.addEventListener('dblclick', function(){
+    window.location.href = 'mailto:bergeos@protonmail.com';
+})
+
+let resume = document.querySelector('#resume');
+resume.addEventListener('dblclick', function(){
+    createWindow(resume.id, resumeContent);
+})
+
 let main = document.querySelector('#main');
 
 function createWindow(id, content){
     let div = document.createElement('div');
     let divBar = document.createElement('div');
     let divContent = document.createElement('div');
+
     div.id = id +'_window';
     divBar.id = id + '_window' + '_bar';
     divContent.id = id + '_window' + '_content';
@@ -102,6 +123,7 @@ function createWindow(id, content){
     div.style.outline = '2px solid black';
     div.style.padding = '0px';
     div.style.margin = '0px';
+    div.style.boxSizing = 'border-box';
     div.style.display = 'flex';
     div.style.flexDirection = 'column';
 
@@ -117,7 +139,7 @@ function createWindow(id, content){
     divBar.style.background = 'linear-gradient(to right, #000066, #33ccff)';
 
     divContent.style.flexGrow = '1';
-    divContent.style.padding = '10px';
+    divContent.style.padding = '20px';
     divContent.style.margin = '0px';
     divContent.innerHTML = content;
     divContent.style.color = 'black';
@@ -163,6 +185,10 @@ function createWindow(id, content){
     divBarMaximize.style.border = '1px solid black';
 
     let offsetX, offsetY; 
+    let positionX, positionY;
+    positionX = div.offsetLeft;
+    positionY = div.offsetTop;
+
 
     divBar.addEventListener('mousedown', function(e){
         if (e.target.tagName.toLowerCase() == 'button'){
@@ -172,13 +198,17 @@ function createWindow(id, content){
 
             offsetX = e.clientX - div.offsetLeft; 
             offsetY = e.clientY - div.offsetTop;
+            positonX = div.offsetLeft;
+            positionY = div.offsetTop;
 
             function mouseMoveHandler(e){
-                div.style.left = (e.clientX - offsetX) + 'px';
-                div.style.top = (e.clientY - offsetY) + 'px';
+                positionX = (e.clientX - offsetX) + 'px';
+                positionY = (e.clientY - offsetY) + 'px';
+                div.style.left = positionX;
+                div.style.top = positionY;
             }
 
-            function mouseUpHandler(e){
+            function mouseUpHandler(){
                 divBar.style.cursor = 'grab';
                 document.removeEventListener('mousemove', mouseMoveHandler);
                 document.removeEventListener('mouseup', mouseUpHandler);
@@ -197,10 +227,10 @@ function createWindow(id, content){
     })
 
     divBarMinimize.addEventListener('click', function(){
-        div.style.width = '30vw';
+        div.style.left = positionX;
+        div.style.top = positionY;
+        div.style.width = '50vw';
         div.style.height = '60vh';
-        div.style.top = '20vh';
-        div.style.left = '35vw';
     })
 
     divBarMaximize.addEventListener('click', function(){

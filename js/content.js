@@ -17,9 +17,16 @@ const toDoContent = `
     <li>Implement choosing fonts and backgrounds</li>
     <li>Create guestbook</li>
     <li>Improve and finalize window functionality</li>
-    <li>Embed the music playlist here instead of linking to YouTube</li>
+    <li>Create custom thumbnails and loading methods for the music playlist</li>
     <li>Spend some time fixing stuff rather than writing an endless to-do list</li>
+    <li>Implement the sitemap</li>
+    <li>Add back and forwards buttons</li>
 </ul> 
+`
+
+const resumeContent = `
+<h1>Résumé</h1>
+<p>Coming soon!</p>
 `
 
 const projectsContent = `
@@ -31,13 +38,13 @@ Except for this site, I suppose. Some projects I plan to do in the near future a
     <li>HTTP messaging server</li>
     <li>Piano cover of "Killing My Love"</li>
 </ul>
-<p>Though the list is brief for now, my planned projects are not limited to programming.
+`
+/*<p>Though the list is brief for now, my planned projects are not limited to programming.
 I also want to do some lifestyle experiments, such as: </p>
 <ul>
     <li>To go some period without listening to music</li>
     <li>To go some period using my phone and computer only for basic communication, school, other essentials, and nothing else</li>
-</ul>
-`
+</ul>*/
 const chessContent = `
 <h1>Play me in chess!</h1>
 <p>This window will be used for playing against my chess engine once it has been made.</p> 
@@ -49,7 +56,9 @@ const writingsContent = `
 <h1>Writings</h1>
 <p>My future writings will be found here. Some topics I want to explore are music, literature,
 philosophy and religion, and lifestyle. I also want to write reviews of books, movies, series, 
-and even albums that I consume.</p><p>Stay tuned for more!</p>
+and even albums that I consume.</p>
+<h3>Goals for the 2024/25 academic year</h3>
+<p>As summer break is nearing its end, I have written some goals for the incoming schoolyear. My goals are related to school, programming, fitness, music, personal finance, and more. You can read about my goals <span id="goals" class="fake_link">here</span>.</p> 
 `
 
 const guestbookContent = `
@@ -61,9 +70,12 @@ const guestbookContent = `
 const blogContent = `
 <h1>Blog</h1>
 <p>On my blog, I will give monthly updates where I share what I did, what I consumed,
-and what I learned.</p>
-<p>Coming soon!</p>
+and what I learned. Take a look through the archives!</p>
+<ul>
+    <li><span id="july2024" class="fake_link">July 2024</span></li>
+</ul>
 `
+
 const sitemapContent = `
 <h1>Sitemap</h1>
 <p>Coming soon!</p>
@@ -102,7 +114,9 @@ const fontsContent = `
 const musicContent = `
 <h1>My Favorite Music</h1>
 
-<p>Here you will find some of my favorite pieces of music. I try not to include too many pieces from the same genre.</p>
+<p>Here you will find some of my favorite pieces of music. I try not to include too many pieces from the same genre.
+You can find the whole playlist <a href="https://youtube.com/playlist?list=PLKGBTAaGeW4hmTYiWRsSZAOuk8d4hMJvO&si=8n2kVido5raYj7CN" target="_blank">here</a>.
+</p>
 
 <h3>Bach - Pièce d'Orgue BWV 572</h3>
 <div class="iframe_container">
@@ -175,4 +189,90 @@ const musicContent = `
     <iframe width="560" height="315" src="https://www.youtube.com/embed/1OZDaRhHHyM?si=60Xnk1t2lgmOVS2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <p>One of my favorite pieces from my favorite modern-era composer. I have played this piece myself on numerous occasions and gatherings. </p>
+`
+
+const july2024Content = `
+<h1>July 2024</h1>
+<p>Welcome to my first ever monthly update! This month I mostly spent just enjoying summer break in my home town of Bergen. I reconnected with old friends, and made some new ones as well. I also spent a week in Sopot/Gdansk with my family. Though the beaches of Sopot were nice and all, the walks through the streets of the cultural Gdansk is what I enjoyed the most. The WWII museum there was impressive, too. </p>
+<p>With respect to BergeOS, the most important event of this month was just setting up the site and working on the most important aspects of it. I am currently simply GitHub Pages to host the site, but I might host it myself in the future, especially when I start implementing some backend stuff (like the guestbook). </p>
+<p>In terms of what I consumed, the most interesting thing I watched was “Dead Poets Society”, a 1989 drama movie about a group of boys who pick up an interest in poetry. That the movie was interesting is really all that I can say for now. I watched the movie while on a date, so naturally, we were a little busy talking and all that… Anyways, I will certainly rewatch the film in the near future. Hopefully i can include my thoughts about it in the August update!</p>
+<p>I have also made some progress in my reading of “Runaway Horses”, Yukio Mishima's second work in his “Sea of Fertility” tetralogy. I am loving the book, though I haven’t always been the most consistent in reading it. If I can start reading just a little bit before bed every night, I should be able to finish it in the coming days. Looks like this one, too, will be included in August. </p>
+<p>Lastly, I have written some goals for the 2024/25 academic year. I have not been the best at setting goals in the past, and when I did, they were mostly generic, like “get stronger” or “read more books”. This time, however, I have decided to set a handful of specific goals that I will aim to reach before the summer break of 2024. You can take a look at them in the "Writings" section.</p>
+
+`
+
+const goalsContent = `
+<h1>Goals for the 2024/25 schoolyear</h1>
+<p>In here you can find the goals I have set for the 2024/25 schoolyear. They encompass academics, programming, fitness, mental health and cognition, literature and philosophy, and piano. I give monthly updates on how it's going in my blog. I will write a full overview of how the project went after the schoolyear. </p>
+<h3>School</h3>
+<ul>
+    <li>Achieve grades equivalent of at least 75% As and 25% Bs</li>
+</ul>
+<p>Not much to say about this. Getting good grades is good, right? Though a bit tricky, this goal should be doable if I stay consistent. </p>
+<h3>Programming</h3>
+<ul>
+    <li>Write a chess engine in C++</li>
+    <li>Make a server for handling guestbooks entries on BergeOS (likely with Node.js)</li>
+    <li>Do a serious fullstack project</li>
+    <li>Boot up linux on my old Macbook once I buy a new one</li>
+</ul>
+<p>I think these goals are solid and will help broaden my programming skills. </p>
+<h3>Physical fitness</h3>
+<ul>
+    <li>100kg bench press 1RM</li>
+    <li>140kg squat 1RM</li>
+    <li>Do a muscle-up</li>
+    <li>Learn how to handstand</li>
+    <li>50kg dips 1RM</li>
+    <li>30kg pull-up 1RM</li>
+    <li>Sub 13:00 3000m run</li>
+    <li>Sub 1:10 400m run</li>
+    <li>10-minute plank</li>
+</ul>
+<p>I love working out, and I love to move my body around. The benchmarks above are a mix of strength, cardio, and functional exercises. The two running goals are likely going to be the easiest. </p>
+<h3>Mental fitness</h3>
+<ul>
+    <li>Lower my phone screen time to under an hour a day</li>
+    <li>Develop a proper morning routine and turn it into a habit</li>
+    <li>Start learning Mandarin Chinese; work through HSK 1 and 2</li>
+</ul>
+<p>Like most people my age, I am addicted to screens. I hope to turn this around. I also think the quality of the digital content we consume is important to consider. I believe it's much better to watch a movie for two hours than scroll through TikTok for the same period. A decent morning routine (that I'm consistent at) is something I've been wanting to develop for quite some time now. As for Mandarin, there is a chance I do my exchange semester in places like Taiwan or Singapore, so it would be nice to know some Mandarin before that, and to learn more while I'm there. </p>
+<h3>Piano</h3>
+<ul>
+    <li>Play through and practice the Hanon exercises</li>
+    <li>Make a piano cover of "Killing My Love" by Leslie Parrish</li>
+    <li>Learn "City of Tears" from the Hollow Knight Piano Collections</li>
+    <li>Relearn Beethoven Piano Sonata in C minor, No. 8, 3rd movement</li>
+    <li>Relearn Rachmaninoff Prelude in C# minor, Op. 3 No. 2</li>
+    <li>Relearn Chopin Nocturne in C minor, Op. 48 No. 1</li>
+    <li>Upload videos to YouTube of myself playing these</li>
+</ul>
+<p>A mix of things I want to do and things I want to redo. Uploading videos to YouTube is meant to be a quality check, since I'm not going to upload anything I'm not proud of. </p>
+<h3>Reading list</h3>
+<ul>
+    <li>Mishima - The Temple of Dawn</li>
+    <li>Mishima - The Decay of the Angel</li>
+    <li>Mishima - Sun and Steel</li>
+    <li>Dostoevsky - Crime and Punsishment</li>
+    <li>Dostoevsky - The Brothers Karamazov</li>
+    <li>Tolstoy - War and Peace</li>
+    <li>Tolstoy - Anna Karenina</li>
+    <li>Nietzsche - Thus Spake Zarathustra</li>
+    <li>Orwell - 1984</li>
+    <li>Melwill - Moby-Dick</li>
+    <li>Joyce - Ulysses</li>
+    <li>Huxley - Brave New World</li>
+    <li>Camus - The Stranger</li>
+    <li>Sartre - Nausea</li>
+</ul>
+<p>I want to get into both literature and philosophy. I think reading this list of some major works will be a good start. The list is perhaps a bit too ambitious, so my goal really is to just read the majority of these. </p>
+<h3>Various</h3>
+<ul>
+    <li>Secure a summer job for 2025</li>
+    <li>Invest around 50% of my savings</li>
+    <li>Get a part-time job</li>
+    <li>Visit a new country</li>
+</ul>
+<p>A CS-related summer job would be amazing, and it is perhaps the most important goal on this whole list. </p>
+<p>I hope it all goes well!</p>
 `
