@@ -184,6 +184,10 @@ function createWindow(id, content){
     divBarMaximize.style.cursor = 'pointer';
     divBarMaximize.style.border = '1px solid black';
 
+    div.addEventListener('mousedown', function(){
+        div.style.zIndex = clicks + '';
+    })
+
     let offsetX, offsetY; 
     let positionX, positionY;
     positionX = div.offsetLeft;
@@ -247,3 +251,8 @@ function createWindow(id, content){
     divBar.appendChild(divBarMinimize);
     divBar.appendChild(divBarMaximize);
 }
+
+let clicks = 0; 
+document.addEventListener('click', function(){
+    clicks++;
+})
