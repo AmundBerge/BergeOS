@@ -124,8 +124,7 @@ function createWindow(id, content){
     div.style.padding = '0px';
     div.style.margin = '0px';
     div.style.boxSizing = 'border-box';
-    div.style.display = 'flex';
-    div.style.flexDirection = 'column';
+    div.style.overflowY = 'auto';
 
     divBar.style.width = '100%';
     divBar.style.height = '3vh';
