@@ -124,8 +124,10 @@ function createWindow(id, content){
     div.style.padding = '0px';
     div.style.margin = '0px';
     div.style.boxSizing = 'border-box';
-    div.style.overflowY = 'auto';
-
+    div.style.display = 'flex';
+    div.style.flexDirection = 'column';
+    div.style.zIndex = clicks + '';
+   
     divBar.style.width = '100%';
     divBar.style.height = '3vh';
     divBar.style.padding = '0px';
@@ -137,7 +139,6 @@ function createWindow(id, content){
     divBar.style.borderBottom = '3px solid white';
     divBar.style.background = 'linear-gradient(to right, #000066, #33ccff)';
 
-    divContent.style.flexGrow = '1';
     divContent.style.padding = '20px';
     divContent.style.margin = '0px';
     divContent.innerHTML = content;
@@ -145,6 +146,7 @@ function createWindow(id, content){
     divContent.style.fontFamily = 'Tahoma, sans-serif';
     divContent.style.backgroundColor = '#e0e0e0';
     divContent.style.overflowY = 'auto';
+    divContent.style.flex = '1';
 
     divBarClose = document.createElement('button');
     divBarMinimize = document.createElement('button');
@@ -189,16 +191,14 @@ function createWindow(id, content){
 
     let offsetX, offsetY; 
     let positionX, positionY;
-    positionX = div.offsetLeft;
-    positionY = div.offsetTop;
-
+    positionX = '25vw';
+    positionY = '20vh';
 
     divBar.addEventListener('mousedown', function(e){
         if (e.target.tagName.toLowerCase() == 'button'){
             return;
         } else {
             divBar.style.cursor = 'grabbing';
-
             offsetX = e.clientX - div.offsetLeft; 
             offsetY = e.clientY - div.offsetTop;
             positonX = div.offsetLeft;
@@ -219,11 +219,8 @@ function createWindow(id, content){
 
             document.addEventListener('mousemove', mouseMoveHandler);
             document.addEventListener('mouseup', mouseUpHandler);
-
         }
     })
-
-   
 
     divBarClose.addEventListener('click', function(){
         div.remove();
