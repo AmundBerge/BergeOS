@@ -11,12 +11,13 @@ main {
     width: 100vw; 
     height: 97vh;
     position: relative;
-    padding: 0; 
+    padding: 20px; 
     margin: 0;
     display: flex; 
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     align-items: start;
+    box-sizing: border-box;
 }
 
 footer {
@@ -28,11 +29,11 @@ footer {
     display: flex; 
     align-items: center; 
     justify-content: space-between;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "MS Sans Serif", "Arial", sans-serif;
     color: white; 
     text-shadow: 1px 1px 0px black;
     border-top: 2px solid black;
-    background-color: grey;
+    background-color: #e0e0e0;
 }
 
 h1 {
@@ -44,9 +45,7 @@ h1 {
     height: 8vh;
     display: flex;
     justify-content: left;
-    gap: 0vh;
-    margin-left: 10px;
-    margin-top: 30px;
+    gap: 28px;
 }
 
 
@@ -57,7 +56,6 @@ h1 {
     width: 8vh;
     height: 8vh;
     padding: 0; 
-    margin: 0 2vh 0 0; 
 }
 
 .icon_picture_container {
@@ -74,23 +72,67 @@ h1 {
 
 .icon_text {
     position: absolute; 
-    bottom: 0; 
+    bottom: -0.5vh; 
     height: 2vh; 
     width: 8vh; 
     align-items: center; 
     border: none; 
     padding: 0;
     margin: 0;
-    font-family: "VT323", sans-serif;
-    font-size: 14pt;
+    font-size: 20px;
     color: white; 
     text-shadow: 1px 1px 0px black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Iceland", serif;
+    font-weight: 400;
+    font-style: normal; 
+    font-family: "Iceland", serif;
 }
 
-#date {
-    text-align: right;
-    padding-right: 5px;
+#task-bar {
+    width: 85vw; 
+    height: 100%;
+    display: flex;
+}
+
+#corner {
+    height: 100%;
+    width: 10vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#corner-text {
+    font-family: "Iceland", serif;
+    color: black;
+    padding-left: 8px;
     font-size: 12pt;
+}
+
+#minimized-items-container { 
+    height: 100%;
+    width: 75vw;
+    display: flex;
+}
+
+#time-container {
+    height: 3vh;
+    width: 10vw;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#time {
+    text-align: right;
+    padding-right: 9px;
+    font-size: 12pt;
+    font-family: "Iceland", serif;
+    color: #020202;
 }
 
 #about_picture_container {
@@ -153,10 +195,6 @@ h1 {
     background-image: url('../assets/icons/to-do.png');
 }
 
-#page_name {
-    margin-left: 5px;
-    font-size: 8pt;
-}
 
 iframe {
     display: block; 
@@ -177,3 +215,83 @@ iframe {
     text-decoration: underline;
     cursor: pointer;
 }
+
+#background_list_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.background-row {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.background-clicker {
+    height: 100%;
+    width: 33%;   
+    flex-grow: 1;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-text {
+    flex-grow: 1;
+}
+
+.background-container {
+    border: 2px solid black;
+    flex-grow: 4;
+    width: 100%;
+    cursor: pointer;
+}
+
+#bg1 {
+    background-color: red;
+}
+
+#bg2 {
+    background-color: orange;
+}
+
+#bg3 {
+    background-color: yellow; 
+}
+
+#bg4 {
+    background-color: yellowgreen;
+}
+
+#bg5 {
+    background-color: cyan;
+}
+
+#bg6 {
+    background-color: green;
+}
+
+#bg7 {
+    background-color: blue;
+}
+
+#bg8 {
+    background-color: purple;
+}
+
+#bg9 {
+    background-color: pink;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

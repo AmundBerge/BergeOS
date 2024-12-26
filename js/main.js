@@ -1,18 +1,55 @@
-let timeText = document.querySelector('#date');
+let timeText = document.querySelector('#time');
 let helper = document.querySelector('#helper');
 let tester = document.querySelector('#tester');
 
 let rootURL = window.location.origin + '/BergeOS';
-if (rootURL.includes('localhost')){    // simple fix for running the project locally
+
+// simple fix for running project with localhost 
+if (rootURL.includes('127')){ 
     rootURL = '..'; 
 }
 
+const taskBarValues = new Map([
+    ['backgrounds_window', ['Backgrounds', 'internet_explorer.png']],
+    ['about_window', ['About', 'about.png']],
+    ['projects_window', ['Projects', 'internet_explorer.png']],
+    ['music_window', ['Music', 'music.png']],
+    ['resume_window', ['Resume', 'resume.png']],
+    ['video_window', ['Video', 'video.png']],
+    ['piano_window', ['Piano', 'piano.png']],
+    ['blog_window', ['Blog', 'internet_explorer.png']],
+    ['writings_window', ['Writings', 'to-do.png']],
+    ['to-do_window', ['To-do', 'to-do.png']],
+    ['chess_window', ['Chess', 'cube.png']],
+    ['sitemap_container', ['Sitemap', 'sitemap.png']]
+])
+
 function getCurrentDateTime(){
-    return new Date().toLocaleString('de-DE');
+    let currentTime = new Date();
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
+    if (hours < 10){
+        hours = '0' + hours;
+    }
+    if (minutes < 10){
+        minutes = '0' + minutes;
+    }
+    if (seconds < 10){
+        seconds = '0' + seconds;
+    }
+    return `${hours}:${minutes}:${seconds}`;
 }
 
 function updateTime(){
     timeText.innerText = getCurrentDateTime();
+}
+
+function changeBackground(backgroundID){
+    document.body.style.backgroundColor = 'none';
+    document.body.style.backgroundImage = "url('../assets/backgrounds/" + backgroundID + "')";
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
 }
 
 setInterval(updateTime, 1000);
@@ -47,11 +84,6 @@ chess.addEventListener('dblclick', function(){
     createWindow(chess.id, chessContent);
 })
 
-let guestbook = document.querySelector('#guestbook');
-guestbook.addEventListener('dblclick', function(){
-    createWindow(guestbook.id, guestbookContent);
-})
-
 let projects = document.querySelector('#projects')
 projects.addEventListener('dblclick', function(){
     createWindow(projects.id, projectsContent);
@@ -61,9 +93,13 @@ let blog = document.querySelector('#blog');
 blog.addEventListener('dblclick', function(){
     createWindow(blog.id, blogContent);
     let july2024 = document.querySelector('#july2024');
+    let august2024 = document.querySelector('#august2024');
     let blogWindow = document.querySelector('#blog_window_content');
     july2024.addEventListener('click', function(){
         blogWindow.innerHTML = july2024Content;
+    })
+    august2024.addEventListener('click', function(){
+        blogWindow.innerHTML = august2024Content;
     })
 })
 
@@ -85,11 +121,35 @@ video.addEventListener('dblclick', function(){
 let backgrounds = document.querySelector('#backgrounds');
 backgrounds.addEventListener('dblclick', function(){
     createWindow(backgrounds.id, backgroundContent);
-})
+    let bg1 = document.querySelector('#bg1');
+    bg1.addEventListener('click', function(){
+        changeBackground('frutiger_aero.jpg');
+    })
+    document.querySelector('#bg2').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'orange';
+    })
+    document.querySelector('#bg3').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'yellow';
+    })
+    document.querySelector('#bg4').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'yellowgreen';
+    })
+    document.querySelector('#bg5').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'green';
+    })
+    document.querySelector('#bg6').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'cyan';
+    })
+    document.querySelector('#bg7').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'blue';
+    })
+    document.querySelector('#bg8').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'purple';
+    })
+    document.querySelector('#bg9').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'pink';
+    })
 
-let fonts = document.querySelector('#fonts');
-fonts.addEventListener('dblclick', function(){
-    createWindow(fonts.id, fontsContent);
 })
 
 let mail = document.querySelector('#mail');
@@ -102,7 +162,11 @@ resume.addEventListener('dblclick', function(){
     createWindow(resume.id, resumeContent);
 })
 
+let minimizedItems = [];
+
 let main = document.querySelector('#main');
+
+let taskBarCount = 0;
 
 function createWindow(id, content){
     let div = document.createElement('div');
@@ -158,10 +222,10 @@ function createWindow(id, content){
     divBarClose.style.margin = '0px';
     divBarClose.style.order = '3';
     divBarClose.style.cursor = 'pointer';
-    divBarClose.style.border = '1px solid black';
+    divBarClose.style.border = '2px solid black';
     divBarClose.style.marginRight = '0.25vh';
-    divBarClose.style.backgroundImage = `url('${rootURL}/assets/buttons/close_button.png')`;
-    divBarClose.style.backgroundPosition = 'center';
+    divBarClose.style.backgroundImage = `url('${rootURL}/assets/buttons/close_button.svg')`;
+    divBarClose.style.backgroundPosition = 'bottom 47% left 60%';
     divBarClose.style.backgroundSize = '80%';
     divBarClose.style.backgroundRepeat = 'no-repeat';
 
@@ -171,11 +235,12 @@ function createWindow(id, content){
     divBarMinimize.style.margin = '0px';
     divBarMinimize.style.order = '2';
     divBarMinimize.style.cursor = 'pointer';
-    divBarMinimize.style.border = '1px solid black';
-    divBarMinimize.style.backgroundImage = `url('${rootURL}/assets/buttons/minimize_button.png')`;
-    divBarMinimize.style.backgroundPosition = 'center bottom 10%';
+    divBarMinimize.style.border = '2px solid black';
+    divBarMinimize.style.backgroundImage = `url('${rootURL}/assets/buttons/minimize_button.svg')`;
+    divBarMinimize.style.backgroundPosition = 'center bottom -110%';
     divBarMinimize.style.backgroundRepeat = 'no-repeat';
     divBarMinimize.style.backgroundSize = '80%';
+    divBarMinimize.style.marginRight = '0.125vh';
 
     divBarMaximize.style.height = '2.5vh';
     divBarMaximize.style.width = '2.5vh';
@@ -183,7 +248,13 @@ function createWindow(id, content){
     divBarMaximize.style.margin = '0px';
     divBarMaximize.style.order = '1';
     divBarMaximize.style.cursor = 'pointer';
-    divBarMaximize.style.border = '1px solid black';
+    divBarMaximize.style.border = '2px solid black';
+    divBarMaximize.style.marginRight = '0.125vh';
+    divBarMaximize.style.backgroundImage = `url('${rootURL}/assets/buttons/maximize_button.svg')`;
+    divBarMaximize.style.backgroundPosition = 'center bottom 40%';
+    divBarMaximize.style.backgroundRepeat = 'no-repeat';
+    divBarMaximize.style.backgroundSize = '80%';
+
 
     div.addEventListener('mousedown', function(){
         div.style.zIndex = clicks + '';
@@ -226,18 +297,67 @@ function createWindow(id, content){
         div.remove();
     })
 
+    let windowIsLarge = false;
+
     divBarMinimize.addEventListener('click', function(){
-        div.style.left = positionX;
-        div.style.top = positionY;
-        div.style.width = '50vw';
-        div.style.height = '60vh';
+        div.style.visibility = 'hidden';
+        minimizedItems.push(div);
+        let taskBarItem = document.createElement('div');
+        taskBarItem.style.height = '100%';
+        taskBarItem.style.width = '10vw';
+        taskBarItem.style.display = 'flex';
+        taskBarItem.id = 'task-bar-item-' + taskBarCount;
+        document.querySelector('#minimized-items-container').appendChild(taskBarItem);
+
+        let taskBarItemIcon = document.createElement('div');
+        taskBarItemIcon.style.backgroundImage = `url('${rootURL}/assets/icons/${taskBarValues.get(div.id)[1]}')`;
+        taskBarItemIcon.style.height = '3vh';
+        taskBarItemIcon.style.width = '3vh';
+        taskBarItemIcon.style.backgroundRepeat = 'no-repeat';
+        taskBarItemIcon.style.backgroundSize = '80%';
+        taskBarItemIcon.style.backgroundPosition = 'center';
+        document.querySelector(`#task-bar-item-${taskBarCount}`).appendChild(taskBarItemIcon);
+
+        let taskBarItemTextContainer = document.createElement('div');
+        taskBarItemTextContainer.style.display = 'flex';
+        taskBarItemTextContainer.style.justifyContent = 'center';
+        taskBarItemTextContainer.style.alignItems = 'center';
+        taskBarItemTextContainer.style.height = '3vh';
+        taskBarItemTextContainer.style.width = 'auto';
+        taskBarItemTextContainer.id = 'task-bar-item-container-' + taskBarCount;
+
+        document.querySelector(`#task-bar-item-${taskBarCount}`).appendChild(taskBarItemTextContainer);
+
+        let taskBarItemText = document.createElement('div');
+        taskBarItemText.innerText = taskBarValues.get(div.id)[0];
+        taskBarItemText.style.fontFamily = '"Iceland", serif';
+        taskBarItemText.style.color = 'black';
+        taskBarItemText.style.fontSize = '12pt';
+
+        document.querySelector(`#task-bar-item-container-${taskBarCount}`).appendChild(taskBarItemText);
+
+        taskBarCount++;
+
+        taskBarItem.addEventListener('click', () => {
+            div.style.visibility = 'visible';
+            div.style.zIndex = clicks;
+            taskBarItem.remove();
+        })
     })
 
     divBarMaximize.addEventListener('click', function(){
-        div.style.width = '100%';
-        div.style.height = '100%';
-        div.style.top = '0vh';
-        div.style.left = '0vw';
+        if (!windowIsLarge){
+            div.style.width = '100%';
+            div.style.height = '100%';
+            div.style.top = '0vh';
+            div.style.left = '0vw'; 
+        } else {
+            div.style.left = positionX;
+            div.style.top = positionY;
+            div.style.width = '50vw';
+            div.style.height = '60vh';
+        }
+        windowIsLarge = !windowIsLarge; 
     })
 
     main.appendChild(div);

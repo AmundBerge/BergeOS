@@ -1,6 +1,6 @@
 const aboutContent = `
 <h1>About</h1>
-<p>My name is Amund Dahlmo Berge, and I'm a 20-year-old Norwegian CS student. My interests include
+<p>My name is Amund Berge, and I'm a 20-year-old Norwegian CS student. My interests include
 programming, piano, sports, and chess. BergeOS is my personal website, intended both as an archive 
 of various aspects of my life, as well as displaying these to the rest of the world.</p>
 <p>As life goes on, I want to post monthly life updates here, review various 
@@ -9,18 +9,17 @@ media I consume, as well as include my writings on various topics.</p>
 
 const toDoContent = `
 <h1>To-Do:</h1>
+<p>The core functionality of the website has finally been made. What remains is mostly design and quality-of-life improvements.</p> 
 <ul>
-    <li>Style windows properly</li>
-    <li>Write and implement the content for all the icons</li>
-    <li>Create taskbar functionality</li>
+    <li>Write more content</li>
+    <li>Create animations for the taskbar</li>
     <li>Find better icons</li>
-    <li>Implement choosing fonts and backgrounds</li>
-    <li>Create guestbook</li>
-    <li>Improve and finalize window functionality</li>
+    <li>Find proper backgrounds</li>
     <li>Create custom thumbnails and loading methods for the music playlist</li>
     <li>Spend some time fixing stuff rather than writing an endless to-do list</li>
     <li>Implement the sitemap</li>
     <li>Add back and forwards buttons</li>
+    <li>Generally improve the design of the site</li>
 </ul> 
 `
 
@@ -39,17 +38,13 @@ Except for this site, I suppose. Some projects I plan to do in the near future a
     <li>Piano cover of "Killing My Love"</li>
 </ul>
 `
-/*<p>Though the list is brief for now, my planned projects are not limited to programming.
-I also want to do some lifestyle experiments, such as: </p>
-<ul>
-    <li>To go some period without listening to music</li>
-    <li>To go some period using my phone and computer only for basic communication, school, other essentials, and nothing else</li>
-</ul>*/
 const chessContent = `
 <h1>Play me in chess!</h1>
 <p>This window will be used for playing against my chess engine once it has been made.</p> 
 <p>If you would like to play chess with me instead, you can send me a challenge here:
-<a href="https://lichess.org/@/Mr_Berge" target="_blank">MyLichessAccount</a></p>
+<a href="https://lichess.org/@/xXADBXx" target="_blank">MyLichessAccount</a></p>
+<h3>Update!</h3>
+<p>I am now working on this project, and I'm currently working on implementing all the chess rules and validating moves. I am using C++ for this project. </p>
 `
 
 const writingsContent = `
@@ -73,6 +68,7 @@ const blogContent = `
 and what I learned. Take a look through the archives!</p>
 <ul>
     <li><span id="july2024" class="fake_link">July 2024</span></li>
+    <li><span id="august2024" class="fake_link">August 2024</span></li>
 </ul>
 `
 
@@ -102,14 +98,52 @@ it is going to be fun, too (hopefully).</p>
 const backgroundContent = `
 <h1>Backgrounds</h1>
 <p>Choose your background from the ones below!</p>
-<p>Coming soon!</p>
+<div id="background_list_container">
+    <div class="background-row">
+        <div class="background-clicker">
+            <div class="background-container" id="bg1"></div>
+            <span class="bg-text">bg1</span> 
+        </div>
+        <div class="background-clicker">
+            <div class="background-container" id="bg2"></div>
+            <span class="bg-text">bg2</span> 
+        </div>
+        <div class="background-clicker">
+            <div class="background-container" id="bg3"></div>
+            <span class="bg-text">bg3</span> 
+        </div>
+    </div> 
+    <div class="background-row">
+        <div class="background-clicker">
+            <div class="background-container" id="bg4"></div>
+            <span class="bg-text">bg4</span> 
+        </div>
+        <div class="background-clicker">
+            <div class="background-container" id="bg5"></div>
+            <span class="bg-text">bg5</span> 
+        </div>
+        <div class="background-clicker">
+            <div class="background-container" id="bg6"></div>
+            <span class="bg-text">bg6</span> 
+        </div>
+    </div> 
+    <div class="background-row">
+        <div class="background-clicker">
+            <div class="background-container" id="bg7"></div>
+            <span class="bg-text">bg7</span> 
+        </div>
+        <div class="background-clicker">
+            <div class="background-container" id="bg8"></div>
+            <span class="bg-text">bg8</span> 
+        </div>
+        <div class="background-clicker">
+            <div class="background-container" id="bg9"></div>
+            <span class="bg-text">bg9</span> 
+        </div>
+    </div> 
+</div> 
 `
 
-const fontsContent = `
-<h1>Fonts</h1>
-<p>Pick your favorite font from the ones below!</p>
-<p>Coming soon! Or, maybe never, as I will probably scrap this...</p>
-`
 
 const musicContent = `
 <h1>My Favorite Music</h1>
@@ -199,6 +233,11 @@ const july2024Content = `
 <p>I have also made some progress in my reading of “Runaway Horses”, Yukio Mishima's second work in his “Sea of Fertility” tetralogy. I am loving the book, though I haven’t always been the most consistent in reading it. If I can start reading just a little bit before bed every night, I should be able to finish it in the coming days. Looks like this one, too, will be included in August. </p>
 <p>Lastly, I have written some goals for the 2024/25 academic year. I have not been the best at setting goals in the past, and when I did, they were mostly generic, like “get stronger” or “read more books”. This time, however, I have decided to set a handful of specific goals that I will aim to reach before the summer break of 2024. You can take a look at them in the "Writings" section.</p>
 
+`
+
+const august2024Content = `
+<h1>August 2024</h1> 
+<p>We are so back. </p>
 `
 
 const goalsContent = `
