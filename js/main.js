@@ -5,7 +5,7 @@ let tester = document.querySelector('#tester');
 let rootURL = window.location.origin + '/BergeOS';
 
 // simple fix for running project with localhost 
-if (rootURL.includes('127')){ 
+if (rootURL.includes('127') || rootURL.includes('localhost')){ 
     rootURL = '..'; 
 }
 
@@ -306,6 +306,12 @@ function createWindow(id, content){
         taskBarItem.style.height = '100%';
         taskBarItem.style.width = '10vw';
         taskBarItem.style.display = 'flex';
+        taskBarItem.style.borderRight = '1px solid black';
+        taskBarItem.style.boxSizing = 'border-box';
+        taskBarItem.style.cursor = 'pointer';  
+        taskBarItem.style.alignItems = 'center';
+        taskBarItem.style.justifyContent = 'start';
+        taskBarItem.style.margin = '0.25vh';
         taskBarItem.id = 'task-bar-item-' + taskBarCount;
         document.querySelector('#minimized-items-container').appendChild(taskBarItem);
 
@@ -332,7 +338,7 @@ function createWindow(id, content){
         taskBarItemText.innerText = taskBarValues.get(div.id)[0];
         taskBarItemText.style.fontFamily = '"Iceland", serif';
         taskBarItemText.style.color = 'black';
-        taskBarItemText.style.fontSize = '12pt';
+        taskBarItemText.style.fontSize = '12pt';  
 
         document.querySelector(`#task-bar-item-container-${taskBarCount}`).appendChild(taskBarItemText);
 
