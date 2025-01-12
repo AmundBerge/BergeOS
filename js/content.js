@@ -40,9 +40,9 @@ Except for this site, I suppose. Some projects I plan to do in the near future a
 `
 const chessContent = `
 <h1>Play me in chess!</h1>
-<p>This window will be used for playing against my chess engine once it has been made.</p> 
+<p>This window will be used for playing against my chess engine once it has been finished.</p> 
 <p>If you would like to play chess with me instead, you can send me a challenge here:
-<a href="https://lichess.org/@/xXADBXx" target="_blank">MyLichessAccount</a></p>
+<a href="https://lichess.org/@/Agilamunduz" target="_blank">MyLichessAccount</a></p>
 <h3>Update!</h3>
 <p>I am now working on this project, and I'm currently working on implementing all the chess rules and validating moves. I am using C++ for this project. </p>
 `
