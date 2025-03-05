@@ -162,11 +162,10 @@ resume.addEventListener('dblclick', function(){
     createWindow(resume.id, resumeContent);
 })
 
-let minimizedItems = [];
-
 let main = document.querySelector('#main');
 
 let taskBarCount = 0;
+let taskBarItemsCount = 0;
 
 function createWindow(id, content){
     let div = document.createElement('div');
@@ -301,7 +300,7 @@ function createWindow(id, content){
 
     divBarMinimize.addEventListener('click', function(){
         div.style.visibility = 'hidden';
-        minimizedItems.push(div);
+        document.querySelector('#minimized-items-container').style.borderLeft = '1px solid black';
         let taskBarItem = document.createElement('div');
         taskBarItem.style.height = '100%';
         taskBarItem.style.width = '10vw';
@@ -343,11 +342,16 @@ function createWindow(id, content){
         document.querySelector(`#task-bar-item-container-${taskBarCount}`).appendChild(taskBarItemText);
 
         taskBarCount++;
+        taskBarItemsCount++;
 
         taskBarItem.addEventListener('click', () => {
             div.style.visibility = 'visible';
             div.style.zIndex = clicks;
             taskBarItem.remove();
+            taskBarItemsCount--; 
+            if (taskBarItemsCount === 0){
+                document.querySelector('#minimized-items-container').style.borderLeft = 'none';
+            }
         })
     })
 
